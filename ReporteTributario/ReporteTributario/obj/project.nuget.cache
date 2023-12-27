@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Y2DHupq5y8g3deKTlUENQwFO/Ls3Vu9+CHst1zi5HB4Z0or1HW/9M3Qyb6CqZ5btfBlkvMss/3CRYb0pfqsAMg==",
+  "success": true,
+  "projectFilePath": "C:\\DEVLUIS\\LuisEstepa\\ReporteTributario\\ReporteTributario\\ReporteTributario\\ReporteTributario.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\DESKTOP-LUIS\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.5\\microsoft.visualstudio.azure.containers.tools.targets.1.19.5.nupkg.sha512"
+  ],
+  "logs": []
+}
