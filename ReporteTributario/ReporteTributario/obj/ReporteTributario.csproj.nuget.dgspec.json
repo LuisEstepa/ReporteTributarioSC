@@ -1,23 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\DEVLUIS\\LuisEstepa\\ReporteTributario\\ReporteTributario\\ReporteTributario\\ReporteTributario.csproj": {}
+    "D:\\ReporteTributarioSC\\ReporteTributario\\ReporteTributario\\ReporteTributario.csproj": {}
   },
   "projects": {
-    "C:\\DEVLUIS\\LuisEstepa\\ReporteTributario\\ReporteTributario\\ReporteTributario\\ReporteTributario.csproj": {
+    "D:\\ReporteTributarioSC\\ReporteTributario\\ReporteTributario\\ReporteTributario.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\DEVLUIS\\LuisEstepa\\ReporteTributario\\ReporteTributario\\ReporteTributario\\ReporteTributario.csproj",
+        "projectUniqueName": "D:\\ReporteTributarioSC\\ReporteTributario\\ReporteTributario\\ReporteTributario.csproj",
         "projectName": "ReporteTributario",
-        "projectPath": "C:\\DEVLUIS\\LuisEstepa\\ReporteTributario\\ReporteTributario\\ReporteTributario\\ReporteTributario.csproj",
-        "packagesPath": "C:\\Users\\DESKTOP-LUIS\\.nuget\\packages\\",
-        "outputPath": "C:\\DEVLUIS\\LuisEstepa\\ReporteTributario\\ReporteTributario\\ReporteTributario\\obj\\",
+        "projectPath": "D:\\ReporteTributarioSC\\ReporteTributario\\ReporteTributario\\ReporteTributario.csproj",
+        "packagesPath": "C:\\Users\\luis.estepa\\.nuget\\packages\\",
+        "outputPath": "D:\\ReporteTributarioSC\\ReporteTributario\\ReporteTributario\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\DESKTOP-LUIS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\luis.estepa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +28,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\DevExpress 23.1\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -45,6 +48,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "EFCore.BulkExtensions": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
             "Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter": {
               "target": "Package",
               "version": "[8.0.0, )"
@@ -76,6 +83,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "NPOI": {
+              "target": "Package",
+              "version": "[2.6.2, )"
             }
           },
           "imports": [
