@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xDtcBxu88iq8xecDEebP/PvEwgGQcInOHU3JqkXmvf/UrKHOEP+6lF0h9OSZ3pULjGBfpHbFy2LzEIt2mwSfiA==",
+  "dgSpecHash": "JUy2L2HP51dKPAJIU3YFtzferMQZwiFYWtk2N3rUySTWyHVvrLTWwK7a8/QSnOSslcRMOXkPvm85YIWZa2oTrg==",
   "success": true,
-  "projectFilePath": "D:\\ReporteTributarioSC\\ReporteTributario\\ReporteTributario\\ReporteTributario.csproj",
+  "projectFilePath": "D:\\EmpresaSoftware\\ReportetributarioSC\\ReporteTributario\\ReporteTributario\\ReporteTributario.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\luis.estepa\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\luis.estepa\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

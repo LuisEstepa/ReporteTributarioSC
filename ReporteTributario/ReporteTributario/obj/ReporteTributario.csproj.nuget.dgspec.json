@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ReporteTributarioSC\\ReporteTributario\\ReporteTributario\\ReporteTributario.csproj": {}
+    "D:\\EmpresaSoftware\\ReportetributarioSC\\ReporteTributario\\ReporteTributario\\ReporteTributario.csproj": {}
   },
   "projects": {
-    "D:\\ReporteTributarioSC\\ReporteTributario\\ReporteTributario\\ReporteTributario.csproj": {
+    "D:\\EmpresaSoftware\\ReportetributarioSC\\ReporteTributario\\ReporteTributario\\ReporteTributario.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ReporteTributarioSC\\ReporteTributario\\ReporteTributario\\ReporteTributario.csproj",
+        "projectUniqueName": "D:\\EmpresaSoftware\\ReportetributarioSC\\ReporteTributario\\ReporteTributario\\ReporteTributario.csproj",
         "projectName": "ReporteTributario",
-        "projectPath": "D:\\ReporteTributarioSC\\ReporteTributario\\ReporteTributario\\ReporteTributario.csproj",
+        "projectPath": "D:\\EmpresaSoftware\\ReportetributarioSC\\ReporteTributario\\ReporteTributario\\ReporteTributario.csproj",
         "packagesPath": "C:\\Users\\luis.estepa\\.nuget\\packages\\",
-        "outputPath": "D:\\ReporteTributarioSC\\ReporteTributario\\ReporteTributario\\obj\\",
+        "outputPath": "D:\\EmpresaSoftware\\ReportetributarioSC\\ReporteTributario\\ReporteTributario\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages",
