@@ -13,6 +13,6 @@ namespace ReporteTributario.Models.Entities
         public string Responsable { get; set; }
         public string Periodo { get; set; }
         public string Periodicidad { get; set; }
-        public bool Vigente { get; set; }
+        public bool? Vigente { get; set; }
     }
 }

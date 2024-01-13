@@ -72,18 +72,18 @@
                 .then((response) => { return response.json() })
                 .then((dataJson) => {
 
+                    console.log(dataJson);
+                    // dataJson.forEach((item) => {
+                    //     $("#tbData tbody").append(
+                    //         $("<tr>").append(
+                    //             $("<td>").text(item.nombre),
+                    //             $("<td>").text(item.apellido),
+                    //             $("<td>").text(item.telefono),
+                    //             $("<td>").text(item.correo)
+                    //         )
 
-                    dataJson.forEach((item) => {
-                        $("#tbData tbody").append(
-                            $("<tr>").append(
-                                $("<td>").text(item.nombre),
-                                $("<td>").text(item.apellido),
-                                $("<td>").text(item.telefono),
-                                $("<td>").text(item.correo)
-                            )
-
-                        )
-                    })
+                    //     )
+                    // })
 
                 })
 

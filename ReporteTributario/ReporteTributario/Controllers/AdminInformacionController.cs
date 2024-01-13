@@ -55,11 +55,11 @@ namespace ReporteTributario.Controllers
             {
 
                 IRow fila = HojaExcel.GetRow(i);
-
+                if (fila.Count() > 1) 
                 lista.Add(new InformacionBaseVM
                 {
 
-                    IdImpuesto = Convert.ToInt32(fila.GetCell(0)),
+                    //IdImpuesto = Convert.ToInt32(fila.GetCell(0)),
                     Impuesto = fila.GetCell(1).ToString(),
                     Ciudad = fila.GetCell(2).ToString(),
                     Departamento = fila.GetCell(3).ToString(),
@@ -99,7 +99,7 @@ namespace ReporteTributario.Controllers
             {
 
                 IRow fila = HojaExcel.GetRow(i);
-
+                if (fila.Count() > 1)
                 lista.Add(new InformacionBase
                 {                    
                     Impuesto = fila.GetCell(1).ToString(),
@@ -108,7 +108,8 @@ namespace ReporteTributario.Controllers
                     FechaLimite = fila.GetCell(4).ToString(),
                     Responsable = fila.GetCell(5).ToString(),
                     Periodo = fila.GetCell(6).ToString(),
-                    Periodicidad = fila.GetCell(7).ToString()
+                    Periodicidad = fila.GetCell(7).ToString(),
+                    Vigente = true
 
                 });
             }
