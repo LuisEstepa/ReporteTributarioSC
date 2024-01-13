@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\ReporteTributario.bundle.scp.css"
     },
     {
+      "Id": "C:\\DEVLUIS\\LuisEstepa\\ReporteTributario\\ReporteTributario\\ReporteTributario\\wwwroot\\Plantillas\\Plantilla.xlsx",
+      "PackagePath": "staticwebassets\\Plantillas\\Plantilla.xlsx"
+    },
+    {
       "Id": "C:\\DEVLUIS\\LuisEstepa\\ReporteTributario\\ReporteTributario\\ReporteTributario\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mvFbvk1oxA2ZF9F2IAqXEHc0Ee1aDH6IO12pu8K8Kds=",
+  "Hash": "YtNaxLn7UFogv9LPv/wlRKI5Cg0+fw3VMgsQ4oJa5vA=",
   "Source": "ReporteTributario",
   "BasePath": "_content/ReporteTributario",
   "Mode": "Default",
@@ -1193,6 +1193,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\DEVLUIS\\LuisEstepa\\ReporteTributario\\ReporteTributario\\ReporteTributario\\wwwroot\\Plantillas\\Plantilla.xlsx",
+      "SourceId": "ReporteTributario",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DEVLUIS\\LuisEstepa\\ReporteTributario\\ReporteTributario\\ReporteTributario\\wwwroot\\",
+      "BasePath": "_content/ReporteTributario",
+      "RelativePath": "Plantillas/Plantilla.xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Plantillas\\Plantilla.xlsx"
     },
     {
       "Identity": "C:\\Users\\DESKTOP-LUIS\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.0\\staticwebassets\\Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css",
