@@ -1,0 +1,38 @@
+﻿@model IEnumerable<ReporteTributario.Models.ViewModels.InformacionBaseVM>
+@{
+    ViewData["Title"] = "GestionarInformacion";
+}
+
+<h1>Gestionar Informacion</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Accion</th>
+            <th>Impuesto</th>
+            <th>Ciudad</th>
+            <th>Departamento</th>
+            <th>FechaLimite</th>
+            <th>Responsable</th>
+            <th>Periodo</th>
+            <th>Periodicidad</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td><button class="btn alert-success" onclick="AbrirModalActualizar('@item.IdImpuesto', '@item.Impuesto')">Actualizar</button></td>
+                <td>@item.Impuesto</td>
+                <td>@item.Ciudad</td>
+                <td>@item.Departamento</td>
+                <td>@item.FechaLimite</td>
+                <td>@item.Responsable}</td>
+                <td>@item.Periodo</td>
+                <td>@item.Periodicidad</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

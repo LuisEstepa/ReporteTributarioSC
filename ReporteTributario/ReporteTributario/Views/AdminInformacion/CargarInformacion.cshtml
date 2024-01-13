@@ -10,6 +10,11 @@
             <div class="card-header"> Cargar Excel</div>
             <div class="card-body">
 
+                <div>
+                    <a href="~/plantillas/plantilla.xlsx">Haga clic en aqui para Descargar Plantilla.xlsx</a>
+                </div>
+                <tr></tr>
+
                 <div class="row">
                     <div class="col-sm-4">
                         <input class="form-control-file" type="file" id="inputExcel" />
@@ -60,7 +65,7 @@
 
             formData.append("ArchivoExcel", input.files[0])
 
-            fetch("AdminInformacion/MostrarDatos", {
+            fetch("./MostrarDatos", {
                 method: "POST",
                 body: formData
             })
@@ -93,7 +98,7 @@
 
             formData.append("ArchivoExcel", input.files[0])
 
-            fetch("AdminInformacion/EnviarDatos", {
+            fetch("./EnviarDatos", {
                 method: "POST",
                 body: formData
             })
