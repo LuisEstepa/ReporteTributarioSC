@@ -880,3 +880,12 @@ C:\DEVLUIS\LuisEstepa\ReporteTributario\ReporteTributario\ReporteTributario\obj\
 C:\DEVLUIS\LuisEstepa\ReporteTributario\ReporteTributario\ReporteTributario\obj\Debug\net8.0\ReporteTributario.genruntimeconfig.cache
 C:\DEVLUIS\LuisEstepa\ReporteTributario\ReporteTributario\ReporteTributario\bin\Debug\net8.0\ReporteTributario.pdb
 C:\DEVLUIS\LuisEstepa\ReporteTributario\ReporteTributario\ReporteTributario\obj\Debug\net8.0\ref\ReporteTributario.dll
+D:\Proyectos\ReporteTributarioSC\ReporteTributario\ReporteTributario\obj\Debug\net8.0\ReporteTributario.csproj.AssemblyReference.cache
+D:\Proyectos\ReporteTributarioSC\ReporteTributario\ReporteTributario\obj\Debug\net8.0\ReporteTributario.GeneratedMSBuildEditorConfig.editorconfig
+D:\Proyectos\ReporteTributarioSC\ReporteTributario\ReporteTributario\obj\Debug\net8.0\ReporteTributario.AssemblyInfoInputs.cache
+D:\Proyectos\ReporteTributarioSC\ReporteTributario\ReporteTributario\obj\Debug\net8.0\ReporteTributario.AssemblyInfo.cs
+D:\Proyectos\ReporteTributarioSC\ReporteTributario\ReporteTributario\obj\Debug\net8.0\ReporteTributario.csproj.CoreCompileInputs.cache
+D:\Proyectos\ReporteTributarioSC\ReporteTributario\ReporteTributario\obj\Debug\net8.0\ReporteTributario.MvcApplicationPartsAssemblyInfo.cache
+D:\Proyectos\ReporteTributarioSC\ReporteTributario\ReporteTributario\obj\Debug\net8.0\ReporteTributario.RazorAssemblyInfo.cache
+D:\Proyectos\ReporteTributarioSC\ReporteTributario\ReporteTributario\obj\Debug\net8.0\ReporteTributario.RazorAssemblyInfo.cs
+D:\Proyectos\ReporteTributarioSC\ReporteTributario\ReporteTributario\obj\Debug\net8.0\ReporteTributario.sourcelink.json

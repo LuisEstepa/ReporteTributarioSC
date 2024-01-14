@@ -244,5 +244,13 @@ namespace ReporteTributario.Controllers
                 return false;
             }
         }
+
+        #region Calendario
+        [HttpGet]
+        public async Task<IActionResult> CalendarioImpuesto()
+        {
+            return View();
+        }
+        #endregion
     }
 }
