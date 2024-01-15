@@ -9,11 +9,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<DbTtributarioContext>(options => {
+builder.Services.AddDbContext<DbTtributarioContext>(options =>
+{
     options.UseSqlServer(builder.Configuration.GetConnectionString("TributarioConnection"));
 });
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<IEventService, EventService>();
+builder.Services.AddScoped<IAdminInformacionService, AdminInformacionService>();
+
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
@@ -22,7 +25,8 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
     });
 
-builder.Services.AddControllersWithViews(options => {
+builder.Services.AddControllersWithViews(options =>
+{
     options.Filters.Add(
             new ResponseCacheAttribute
             {

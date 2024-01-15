@@ -25,7 +25,7 @@ namespace ReporteTributario.Apis
         {
             List<VMEventos> eventos = new List<VMEventos>();
             var LstEven = await _eventService.GetInformacionListAsync();
-            foreach(var item in LstEven)
+            foreach (var item in LstEven)
             {
                 VMEventos vMEventos = new VMEventos();
                 vMEventos.id = item.IdImpuesto;
