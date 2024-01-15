@@ -1,13 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
+﻿using EFCore.BulkExtensions;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
-using NPOI.HSSF.UserModel;
-using ReporteTributario.Models.ViewModels;
-using ReporteTributario.Models.Entities;
 using ReporteTributario.Models;
-using EFCore.BulkExtensions;
-using Microsoft.EntityFrameworkCore;
+using ReporteTributario.Models.Entities;
+using ReporteTributario.Models.ViewModels;
 
 namespace ReporteTributario.Controllers
 {
@@ -55,20 +54,20 @@ namespace ReporteTributario.Controllers
             {
 
                 IRow fila = HojaExcel.GetRow(i);
-                if (fila.Count() > 1) 
-                lista.Add(new InformacionBaseVM
-                {
+                if (fila.Count() > 1)
+                    lista.Add(new InformacionBaseVM
+                    {
 
-                    //IdImpuesto = Convert.ToInt32(fila.GetCell(0)),
-                    Impuesto = fila.GetCell(1).ToString(),
-                    Ciudad = fila.GetCell(2).ToString(),
-                    Departamento = fila.GetCell(3).ToString(),
-                    FechaLimite = fila.GetCell(4).ToString(),
-                    Responsable = fila.GetCell(5).ToString(),
-                    Periodo = fila.GetCell(6).ToString(),
-                    Periodicidad = fila.GetCell(7).ToString()
+                        //IdImpuesto = Convert.ToInt32(fila.GetCell(0)),
+                        Impuesto = fila.GetCell(1).ToString(),
+                        Ciudad = fila.GetCell(2).ToString(),
+                        Departamento = fila.GetCell(3).ToString(),
+                        FechaLimite = Convert.ToDateTime(fila.GetCell(4).ToString()),
+                        Responsable = fila.GetCell(5).ToString(),
+                        Periodo = fila.GetCell(6).ToString(),
+                        Periodicidad = fila.GetCell(7).ToString()
 
-                });
+                    });
             }
 
             return StatusCode(StatusCodes.Status200OK, lista);
@@ -100,18 +99,18 @@ namespace ReporteTributario.Controllers
 
                 IRow fila = HojaExcel.GetRow(i);
                 if (fila.Count() > 1)
-                lista.Add(new InformacionBase
-                {                    
-                    Impuesto = fila.GetCell(1).ToString(),
-                    Ciudad = fila.GetCell(2).ToString(),
-                    Departamento = fila.GetCell(3).ToString(),
-                    FechaLimite = fila.GetCell(4).ToString(),
-                    Responsable = fila.GetCell(5).ToString(),
-                    Periodo = fila.GetCell(6).ToString(),
-                    Periodicidad = fila.GetCell(7).ToString(),
-                    Vigente = true
+                    lista.Add(new InformacionBase
+                    {
+                        Impuesto = fila.GetCell(1).ToString(),
+                        Ciudad = fila.GetCell(2).ToString(),
+                        Departamento = fila.GetCell(3).ToString(),
+                        FechaLimite = Convert.ToDateTime(fila.GetCell(4).ToString()),
+                        Responsable = fila.GetCell(5).ToString(),
+                        Periodo = fila.GetCell(6).ToString(),
+                        Periodicidad = fila.GetCell(7).ToString(),
+                        Vigente = true
 
-                });
+                    });
             }
 
             _dbcontext.BulkInsert(lista);
@@ -129,7 +128,7 @@ namespace ReporteTributario.Controllers
         public async Task<List<InformacionBaseVM>> ObtenerRegistrosAsync()
         {
             List<InformacionBaseVM> Datos = new();
-            
+
             Datos = await _dbcontext.InformacionBase.Select(x => new InformacionBaseVM
             {
                 IdImpuesto = x.IdImpuesto,
@@ -143,7 +142,7 @@ namespace ReporteTributario.Controllers
             }).ToListAsync();
 
             return Datos;
-        }            
+        }
 
         public async Task<InformacionBase> ObtenerRegistro(int id)
         {
@@ -160,8 +159,8 @@ namespace ReporteTributario.Controllers
         {
             try
             {
-                await _dbcontext.InformacionBase.AddAsync(model); 
-                
+                await _dbcontext.InformacionBase.AddAsync(model);
+
                 await _dbcontext.SaveChangesAsync();
 
                 return true;
@@ -188,7 +187,7 @@ namespace ReporteTributario.Controllers
                 modelExistente.Periodo = model.Periodo;
                 modelExistente.Periodicidad = model.Periodicidad;
 
-                await _dbcontext.SaveChangesAsync();  
+                await _dbcontext.SaveChangesAsync();
 
                 return true;
 
@@ -198,7 +197,7 @@ namespace ReporteTributario.Controllers
                 // Manejar la excepción, como registrar el error o informar al usuario
                 Console.WriteLine(ex.Message);
                 return false;
-            }      
+            }
         }
 
         public async Task<bool> EliminarRegistro(int id)
@@ -211,17 +210,17 @@ namespace ReporteTributario.Controllers
             {
                 InformacionBase model = await ObtenerRegistro(id);
 
-                _dbcontext.InformacionBase.Remove(model); 
+                _dbcontext.InformacionBase.Remove(model);
 
                 await _dbcontext.SaveChangesAsync();
 
-                return true;  
+                return true;
             }
             catch (Exception ex)
             {
                 // Manejar la excepción, como registrar el error o informar al usuario
                 Console.WriteLine(ex.Message);
-                return false;  
+                return false;
             }
         }
 
@@ -229,7 +228,7 @@ namespace ReporteTributario.Controllers
         {
             InformacionBase modelExistente = await ObtenerRegistro(model.IdImpuesto);
             try
-            {                
+            {
                 modelExistente.Vigente = model.Vigente;
 
                 await _dbcontext.SaveChangesAsync();
@@ -244,5 +243,29 @@ namespace ReporteTributario.Controllers
                 return false;
             }
         }
+
+        #region Calendario
+        [HttpGet]
+        public async Task<IActionResult> CalendarioImpuesto()
+        {
+            return await Task.FromResult(View());
+        }
+        [HttpGet]
+        public async Task<List<VMEventos>> GetAllEventos()
+        {
+            List<VMEventos> eventos = new List<VMEventos>();
+            var LstEven = await _dbcontext.InformacionBase.Where(x=>x.Vigente==true).ToListAsync();
+            foreach (var item in LstEven)
+            {
+                VMEventos vMEventos = new VMEventos();
+                vMEventos.id = item.IdImpuesto;
+                vMEventos.title = item.Impuesto;
+                vMEventos.start = item.FechaLimite.ToString("yyyy-MM-dd HH:mm:ss");
+                //vMEventos.end = item.FechaLimite.FormatWith("yyyy-MM-dd HH:mm:ss");
+                eventos.Add(vMEventos);
+            }
+            return eventos;
+        }
+        #endregion
     }
 }
