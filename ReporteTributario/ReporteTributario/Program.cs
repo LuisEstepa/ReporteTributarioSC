@@ -13,6 +13,7 @@ builder.Services.AddDbContext<DbTtributarioContext>(options => {
     options.UseSqlServer(builder.Configuration.GetConnectionString("TributarioConnection"));
 });
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
+builder.Services.AddScoped<IEventService, EventService>();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>

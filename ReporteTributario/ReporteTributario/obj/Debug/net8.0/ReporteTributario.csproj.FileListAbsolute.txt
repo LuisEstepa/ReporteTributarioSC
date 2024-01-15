@@ -1181,3 +1181,10 @@ D:\Proyectos\ReporteTributarioSC\ReporteTributario\ReporteTributario\obj\Debug\n
 D:\Proyectos\ReporteTributarioSC\ReporteTributario\ReporteTributario\obj\Debug\net8.0\ReporteTributario.pdb
 D:\Proyectos\ReporteTributarioSC\ReporteTributario\ReporteTributario\obj\Debug\net8.0\ReporteTributario.genruntimeconfig.cache
 D:\Proyectos\ReporteTributarioSC\ReporteTributario\ReporteTributario\obj\Debug\net8.0\ref\ReporteTributario.dll
+D:\ReporteTributarioSC\ReporteTributario\ReporteTributario\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
+D:\ReporteTributarioSC\ReporteTributario\ReporteTributario\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
+D:\ReporteTributarioSC\ReporteTributario\ReporteTributario\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Forms.dll
+D:\ReporteTributarioSC\ReporteTributario\ReporteTributario\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
+D:\ReporteTributarioSC\ReporteTributario\ReporteTributario\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
+D:\ReporteTributarioSC\ReporteTributario\ReporteTributario\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\ReporteTributarioSC\ReporteTributario\ReporteTributario\bin\Debug\net8.0\Microsoft.JSInterop.dll

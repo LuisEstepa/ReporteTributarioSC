@@ -12,6 +12,7 @@ namespace ReporteTributario.Servicios.Implementacion
         {
             _Context = dbContext;
         }
+
         public async Task<List<InformacionBase>> GetInformacionListAsync()
         {
             List<InformacionBase> _event = await _Context.InformacionBase.Where(x => x.Vigente == true).ToListAsync();

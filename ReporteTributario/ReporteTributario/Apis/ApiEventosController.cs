@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ReporteTributario.Models.Entities;
 using ReporteTributario.Models.ViewModels;
+using ReporteTributario.Recursos;
 using ReporteTributario.Servicios.Contrato;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -18,6 +20,7 @@ namespace ReporteTributario.Apis
 
         // GET: api/<ApiEventosController>
         [HttpGet]
+        //[Route("Get/open")]
         public async Task<List<VMEventos>> GetAllEventos()
         {
             List<VMEventos> eventos = new List<VMEventos>();
@@ -33,7 +36,13 @@ namespace ReporteTributario.Apis
             }
             return eventos;
         }
-
+        //[HttpGet]
+        //[Route("Get/open")]
+        //public async Task<Usuario> GetUsuario1(string correo, string clave)
+        //{
+        //    Usuario usuario_encontrado = await _usuarioServicio.GetUsuario(correo, Utilidades.EncriptarClave(clave));
+        //    return usuario_encontrado;
+        //}
         //// GET api/<ApiEventosController>/5
         //[HttpGet("{id}")]
         //public string Get(int id)
