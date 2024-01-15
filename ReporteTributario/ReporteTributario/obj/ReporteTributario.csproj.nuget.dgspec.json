@@ -1,28 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Proyectos\\ReporteTributarioSC\\ReporteTributario\\ReporteTributario\\ReporteTributario.csproj": {}
+    "D:\\ReporteTributarioSC\\ReporteTributario\\ReporteTributario\\ReporteTributario.csproj": {}
   },
   "projects": {
-    "D:\\Proyectos\\ReporteTributarioSC\\ReporteTributario\\ReporteTributario\\ReporteTributario.csproj": {
+    "D:\\ReporteTributarioSC\\ReporteTributario\\ReporteTributario\\ReporteTributario.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Proyectos\\ReporteTributarioSC\\ReporteTributario\\ReporteTributario\\ReporteTributario.csproj",
+        "projectUniqueName": "D:\\ReporteTributarioSC\\ReporteTributario\\ReporteTributario\\ReporteTributario.csproj",
         "projectName": "ReporteTributario",
-        "projectPath": "D:\\Proyectos\\ReporteTributarioSC\\ReporteTributario\\ReporteTributario\\ReporteTributario.csproj",
-        "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
-        "outputPath": "D:\\Proyectos\\ReporteTributarioSC\\ReporteTributario\\ReporteTributario\\obj\\",
+        "projectPath": "D:\\ReporteTributarioSC\\ReporteTributario\\ReporteTributario\\ReporteTributario.csproj",
+        "packagesPath": "C:\\Users\\luis.estepa\\.nuget\\packages\\",
+        "outputPath": "D:\\ReporteTributarioSC\\ReporteTributario\\ReporteTributario\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
-          "C:\\Program Files\\DevExpress 23.2\\Components\\Offline Packages",
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages",
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.2.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.2.config",
+          "C:\\Users\\luis.estepa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -31,8 +28,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\DevExpress 22.2\\Components\\System\\Components\\Packages": {},
-          "C:\\Program Files\\DevExpress 23.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files\\DevExpress 23.1\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -112,7 +108,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
