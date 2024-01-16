@@ -7,16 +7,29 @@ using NPOI.XSSF.UserModel;
 using ReporteTributario.Models;
 using ReporteTributario.Models.Entities;
 using ReporteTributario.Models.ViewModels;
+using ReporteTributario.Servicios.Contrato;
+using System.Data;
 
 namespace ReporteTributario.Controllers
 {
     public class AdminInformacionController : Controller
     {
         private readonly DbTtributarioContext _dbcontext;
+        private readonly IAdminInformacionService _Service;
 
-        public AdminInformacionController(DbTtributarioContext dbcontext)
+        public string draw = "";
+        public string start = "";
+        public string length = "";
+        public string sortColumn = "";
+        public string sortColumnDir = "";
+        public string searchValue = "";
+
+        public int pageSize, skip, recordsTotal;
+
+        public AdminInformacionController(DbTtributarioContext dbcontext, IAdminInformacionService Service)
         {
             _dbcontext = dbcontext;
+            _Service = Service;
         }
         public IActionResult Index()
         {
@@ -125,6 +138,63 @@ namespace ReporteTributario.Controllers
             return View(datos);
         }
 
+        public async Task<IActionResult> MostrarInformacion()
+        {
+            var datos = await ObtenerRegistrosAsync();
+            //ViewBag.Datos = await ObtenerRegistrosAsync();
+            return View(datos);
+        }
+
+        public async Task<IActionResult> MostrarInformacion2()
+        {
+            var datos = await ObtenerRegistrosAsync();
+            //ViewBag.Datos = await ObtenerRegistrosAsync();
+            return View(datos);
+        }
+
+        [HttpPost]
+        public ActionResult Json()
+        {
+            var draw = Request.Form["draw"].FirstOrDefault();
+            var start = Request.Form["start"].FirstOrDefault();
+            var length = Request.Form["length"].FirstOrDefault();
+            var sortColumn = Request.Form["columns[" + Request.Form["order[0][column]"].FirstOrDefault() + "][name]"].FirstOrDefault();
+            var sortColumnDir = Request.Form["order[0][dir]"].FirstOrDefault();
+            var searchValue = Request.Form["search[value]"].FirstOrDefault();
+
+            var pageSize = length != null ? Convert.ToInt32(length) : 0;
+            var skip = start != null ? Convert.ToInt32(length) : 0;
+            var recordsTotal = 0;
+
+            //var lista = _Service.ObtenerRegistrosAsync();
+
+            var lst = (from d in _dbcontext.InformacionBase select new InformacionBaseVM
+            {
+                IdImpuesto = d.IdImpuesto,
+                Impuesto = d.Impuesto,
+                Ciudad = d.Ciudad,
+                Departamento = d.Departamento,
+                FechaLimite = d.FechaLimite,
+                Responsable = d.Responsable,
+                Periodo = d.Periodo,
+                Periodicidad = d.Periodicidad
+
+            }).ToList();
+
+            recordsTotal = lst.Count();
+
+            lst = lst.Skip(skip).Take(pageSize).ToList();
+
+            return Json(new
+            {
+                draw = draw,
+                recordsFiltered = recordsTotal,
+                recordsTotal = recordsTotal,
+                data = lst
+            });
+
+        }
+
         public async Task<List<InformacionBaseVM>> ObtenerRegistrosAsync()
         {
             List<InformacionBaseVM> Datos = new();
@@ -137,7 +207,8 @@ namespace ReporteTributario.Controllers
                 Departamento = x.Departamento,
                 FechaLimite = x.FechaLimite,
                 Responsable = x.Responsable,
-                Periodo = x.Periodo
+                Periodo = x.Periodo,
+                Periodicidad = x.Periodicidad
 
             }).ToListAsync();
 
@@ -254,7 +325,7 @@ namespace ReporteTributario.Controllers
         public async Task<List<VMEventos>> GetAllEventos()
         {
             List<VMEventos> eventos = new List<VMEventos>();
-            var LstEven = await _dbcontext.InformacionBase.Where(x=>x.Vigente==true).ToListAsync();
+            var LstEven = await _dbcontext.InformacionBase.Where(x => x.Vigente == true).ToListAsync();
             foreach (var item in LstEven)
             {
                 VMEventos vMEventos = new VMEventos();

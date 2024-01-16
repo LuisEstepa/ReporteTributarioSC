@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewData["Title"] = "MostrarInformacion2";
+}
+
+@section Styles {
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+    <!-- DataTable -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+          integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+}
+
+<div class="container my-4">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <table id="datatable" class="table table-striped">
+                <caption>
+                    DataTable.js Demo
+                </caption>
+                <thead id="datatableHead">
+                    <tr>
+                        <th class="centered">IdImpuesto</th>
+                        <th class="centered">Impuesto</th>
+                        <th class="centered">Ciudad</th>
+                        <th class="centered">Departamento</th>
+                        <th class="centered">FechaLimite</th>
+                        <th class="centered">Responsable</th>
+                        <th class="centered">Periodo</th>
+                        <th class="centered">Periodicidad</th>
+                    </tr>
+                </thead>
+                <tbody id="datatableBody">
+                    @* @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td><button class="btn alert-success" onclick="AbrirModalActualizar('@item.IdImpuesto', '@item.Impuesto')">Actualizar</button></td>
+                            <td>@item.Impuesto</td>
+                            <td>@item.Ciudad</td>
+                            <td>@item.Departamento</td>
+                            <td>@item.FechaLimite</td>
+                            <td>@item.Responsable</td>
+                            <td>@item.Periodo</td>
+                            <td>@item.Periodicidad</td>
+                        </tr>
+                    } *@
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+            // Initialize DataTable with options, including AJAX:
+            $("#datatable").DataTable({
+                "processing": true,
+                "serverSide": true,
+                ajax: {
+                    url: "@Url.Content("~/AdminInformacion/Json")",
+                    type: "POST",
+                    dataType: "json"  // Note: Corrected "datatype" to "dataType"
+                },
+                pageLength: 10,
+                filter: false,
+                responsivePriority: 1,
+                data: null,  // Explicitly set data to null for AJAX loading
+                columns: [
+                    { data: "IdImpuesto", name: "IdImpuesto", autoWidth: true },
+                    { data: "Impuesto", name: "Impuesto", autoWidth: true },
+                    { data: "Ciudad", name: "Ciudad", autoWidth: true },
+                    { data: "Departamento", name: "Departamento", autoWidth: true },
+                    { data: "FechaLimite", name: "FechaLimite", autoWidth: true },
+                    { data: "Responsable", name: "Responsable", autoWidth: true },
+                    { data: "Periodo", name: "Periodo", autoWidth: true },
+                    { data: "Periodicidad", name: "Periodicidad", autoWidth: true }
+                ]
+            });
+        });
+    </script>
+
+}
+
+
