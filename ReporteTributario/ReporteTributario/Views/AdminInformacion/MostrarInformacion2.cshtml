@@ -20,11 +20,9 @@
     <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <table id="datatable" class="table table-striped">
-                <caption>
-                    DataTable.js Demo
-                </caption>
+                
                 <thead id="datatableHead">
-                    <tr>
+                    <tr>                        
                         <th class="centered">IdImpuesto</th>
                         <th class="centered">Impuesto</th>
                         <th class="centered">Ciudad</th>
@@ -54,6 +52,9 @@
         </div>
     </div>
 </div>
+<div>
+    <p>Termina la tabla</p>
+</div>
 
 
 @section scripts{
@@ -75,21 +76,89 @@
                 },
                 pageLength: 10,
                 filter: false,
-                responsivePriority: 1,
-                data: null,  // Explicitly set data to null for AJAX loading
-                columns: [
-                    { data: "IdImpuesto", name: "IdImpuesto", autoWidth: true },
-                    { data: "Impuesto", name: "Impuesto", autoWidth: true },
-                    { data: "Ciudad", name: "Ciudad", autoWidth: true },
-                    { data: "Departamento", name: "Departamento", autoWidth: true },
-                    { data: "FechaLimite", name: "FechaLimite", autoWidth: true },
-                    { data: "Responsable", name: "Responsable", autoWidth: true },
-                    { data: "Periodo", name: "Periodo", autoWidth: true },
-                    { data: "Periodicidad", name: "Periodicidad", autoWidth: true }
+                responsivePriority: 1,                     
+                "columns": [
+                    { "data": "idImpuesto", "name": "IdImpuesto", autoWidth: true },
+                    { "data": "impuesto", "name": "Impuesto", autoWidth: true },
+                    { "data": "ciudad", "name": "Ciudad", autoWidth: true },
+                    { "data": "departamento", "name": "Departamento", autoWidth: true },
+                    { "data": "fechaLimite", "name": "FechaLimite", autoWidth: true },
+                    { "data": "responsable", "name": "Responsable", autoWidth: true },
+                    { "data": "periodo", "name": "Periodo", autoWidth: true },
+                    { "data": "periodicidad", "name": "Periodicidad", autoWidth: true }
                 ]
             });
         });
     </script>
+    @* <script>
+        function F_GetAnotacionPorFecha() {
+            if ($.fn.dataTable.isDataTable("#tbGrilla")) {
+                $("#tbGrilla").DataTable().destroy();
+            }
+            var P_IdServicio = $("#IdTipoServicio").val();
+            var P_FechaInicial = $("#txtFechaInicial").val();
+            var P_FechaFinal = $("#txtFechaFinal").val();
+            $("#tbGrilla").DataTable({
+                "ajax": {
+                    type: "POST",
+                    url: UrlGetAnotaciones,
+                    async: true,
+                    data: {
+                        V_IdServicio: P_IdServicio,
+                        V_FechaInicial: P_FechaInicial,
+                        V_FechaFinal: P_FechaFinal
+                    },
+                    datatype: "json",
+                    cache: false
+                },
+                "initComplete": function (settings, json) {
+                    if (json.success) {
+                        $("#PanelGrilla").removeClass('hidden');
+                    }
+                    else {
+                        $("#PanelGrilla").addClass('hidden');
+                    }
+                },
+                language: glOpcionesIdioma,
+                responsive: true,
+                "columns": [
+                    { "data": null, className: "celdaCenter celda1", "render": function (data, type, row) { return ''; } },
+                    //{
+                    //    "data": null, className: "celdaCenter celda1", "render": function (data, type, row) {
+                    //        var inicioBoton = '<div class="dropdown"><button class="btn btn-success" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="fa fa-align-center"></span></button><ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="background-color: lightgoldenrodyellow; line-height:23px; transform:translate3d(0px, -102px, 0px);">';
+                    //        //var Ver = `<li style="padding-left: 1px;"><a href="javascript:F_GetLibrosDetalle(${row.IdResponsable})"><i class="fa fa-eye green"></i>&nbsp;Ver Detalle</a></li>`;
+                    //        //var Eliminar = `<li style="padding-left: 1px;"><a href="javascript:Dell_Responsable(${row.IdResponsable})"><i class="fa fa-trash red"></i>&nbsp;Eliminar</a></li>`;
+                    //        var finBoton = '</ul></div>';
+                    //        return inicioBoton /*+ Eliminar*/ + finBoton;
+                    //    }
+                    //},
+                    { "title": "Fecha y Hora", "data": "FechaCreacion", "name": "FechaCreacion", className: "celdaCenter celda6" },
+                    { "title": "Asunto", "data": "Asunto", "name": "Asunto", className: "celdaCenter celda5" },
+                    { "title": "Anotación", "data": "Anotacion", "name": "Anotacion", className: "celdaJust celda40" },
+                    { "title": "Creado por", "data": "Usuario", "name": "Usuario", className: "celdaJust celda11" },
+                ],
+                lengthMenu: [
+                    [10, 25, 50, -1],
+                    ['10 registros', '25 registros', '50 registros', 'Todos']
+                ],
+                //"rowCallback": function (row, data, index) {
+                //    if (data.EstadoLibro == "0") {
+                //        $('td', row).eq(2).addClass("SemaforoRojo");
+                //    }
+                //    else {
+                //        $('td', row).eq(2).addClass("SemaforoVerde");
+                //    }
+                //},
+                ordering: false,
+                pageLength: 10,
+                bLengthChange: true,
+                searching: true,
+                paging: true,
+                info: true
+            });
+        }
+
+    </script> *@
 
 }
 

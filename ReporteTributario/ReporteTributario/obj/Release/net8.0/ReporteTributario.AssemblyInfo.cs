@@ -13,9 +13,9 @@ using System.Reflection;
 
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("be2ad983-44a6-44d8-8236-92b9c457a7d0")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("ReporteTributario")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4695ed3177c55f0591cd2cf6789ce8e819fd3afc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("ReporteTributario")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ReporteTributario")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

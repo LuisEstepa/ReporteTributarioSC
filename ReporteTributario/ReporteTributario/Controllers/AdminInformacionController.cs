@@ -183,7 +183,7 @@ namespace ReporteTributario.Controllers
 
             recordsTotal = lst.Count();
 
-            lst = lst.Skip(skip).Take(pageSize).ToList();
+            var recordsFiltered = lst.Skip(skip).Take(pageSize).ToList();
 
             return Json(new
             {
