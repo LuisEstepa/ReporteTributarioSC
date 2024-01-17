@@ -19,8 +19,10 @@
 <div class="container my-4">
     <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-            <table id="datatable" class="table table-striped">
-                
+            <div>
+                <
+            </div>
+            <table id="datatable" class="display">                
                 <thead id="datatableHead">
                     <tr>                        
                         <th class="centered">IdImpuesto</th>
@@ -74,9 +76,10 @@
                     type: "POST",
                     dataType: "json"  // Note: Corrected "datatype" to "dataType"
                 },
-                pageLength: 10,
-                filter: false,
-                responsivePriority: 1,                     
+                "pageLength": 10,
+                "filter": true,
+                "responsivePriority": 1,
+                "data":null,
                 "columns": [
                     { "data": "idImpuesto", "name": "IdImpuesto", autoWidth: true },
                     { "data": "impuesto", "name": "Impuesto", autoWidth: true },

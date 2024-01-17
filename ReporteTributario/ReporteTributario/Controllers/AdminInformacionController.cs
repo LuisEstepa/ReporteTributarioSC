@@ -9,7 +9,6 @@ using ReporteTributario.Models.Entities;
 using ReporteTributario.Models.ViewModels;
 using ReporteTributario.Servicios.Contrato;
 using System.Data;
-
 namespace ReporteTributario.Controllers
 {
     public class AdminInformacionController : Controller
@@ -162,28 +161,44 @@ namespace ReporteTributario.Controllers
             var sortColumnDir = Request.Form["order[0][dir]"].FirstOrDefault();
             var searchValue = Request.Form["search[value]"].FirstOrDefault();
 
-            var pageSize = length != null ? Convert.ToInt32(length) : 0;
-            var skip = start != null ? Convert.ToInt32(length) : 0;
-            var recordsTotal = 0;
+            pageSize = length != null ? Convert.ToInt32(length) : 0;
+            skip = start != null ? Convert.ToInt32(start) : 0;
+            recordsTotal = 0;          
 
             //var lista = _Service.ObtenerRegistrosAsync();
 
-            var lst = (from d in _dbcontext.InformacionBase select new InformacionBaseVM
+            IQueryable<InformacionBaseVM> query = (from d in _dbcontext.InformacionBase
+                       select new InformacionBaseVM
+                       {
+                           IdImpuesto = d.IdImpuesto,
+                           Impuesto = d.Impuesto,
+                           Ciudad = d.Ciudad,
+                           Departamento = d.Departamento,
+                           FechaLimite = d.FechaLimite,
+                           Responsable = d.Responsable,
+                           Periodo = d.Periodo,
+                           Periodicidad = d.Periodicidad                           
+                       }); 
+            
+
+            if(searchValue != "" )
+                query = query.Where(s => s.Ciudad.Contains(searchValue));
+
+            if(!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDir)))
             {
-                IdImpuesto = d.IdImpuesto,
-                Impuesto = d.Impuesto,
-                Ciudad = d.Ciudad,
-                Departamento = d.Departamento,
-                FechaLimite = d.FechaLimite,
-                Responsable = d.Responsable,
-                Periodo = d.Periodo,
-                Periodicidad = d.Periodicidad
+                if (sortColumnDir == "asc") {
+                    query = query.OrderBy(l => l.Ciudad);
+                }
+                else
+                {
+                    query = query.OrderByDescending(l => l.Ciudad);
+                }                     
 
-            }).ToList();
+            }
 
-            recordsTotal = lst.Count();
+            recordsTotal = query.Count();
 
-            var recordsFiltered = lst.Skip(skip).Take(pageSize).ToList();
+            var lst = query.Skip(skip).Take(pageSize).ToList();
 
             return Json(new
             {
