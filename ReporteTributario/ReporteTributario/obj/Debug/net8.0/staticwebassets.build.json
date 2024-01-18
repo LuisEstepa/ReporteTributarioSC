@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ribUwdJ7UA/aWbi/4PDwy1GDv2mJqMWiCoYCTILgXuI=",
+  "Hash": "hiZqn3AuyJWBxGyAk2E48arssZCpMbwpZfo+dJEbsxo=",
   "Source": "ReporteTributario",
   "BasePath": "_content/ReporteTributario",
   "Mode": "Default",
@@ -4157,6 +4157,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\AdminInfo\\adminInfo.js"
+    },
+    {
+      "Identity": "C:\\DEVLUIS\\LuisEstepa\\ReporteTributario\\ReporteTributarioSC\\ReporteTributario\\ReporteTributario\\wwwroot\\js\\AdminInfo\\adminInfo1.js",
+      "SourceId": "ReporteTributario",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DEVLUIS\\LuisEstepa\\ReporteTributario\\ReporteTributarioSC\\ReporteTributario\\ReporteTributario\\wwwroot\\",
+      "BasePath": "_content/ReporteTributario",
+      "RelativePath": "js/AdminInfo/adminInfo1.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\AdminInfo\\adminInfo1.js"
     },
     {
       "Identity": "C:\\DEVLUIS\\LuisEstepa\\ReporteTributario\\ReporteTributarioSC\\ReporteTributario\\ReporteTributario\\wwwroot\\js\\Calendario\\AdminEvento.js",

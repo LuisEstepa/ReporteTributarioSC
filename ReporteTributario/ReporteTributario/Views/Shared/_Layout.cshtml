@@ -30,7 +30,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="AdminInformacion" asp-action="CargarInformacion">Cargue de información</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="AdminInformacion" asp-action="MostrarInformacion2">Gestionar información</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="AdminInformacion" asp-action="MostrarInformacion">Gestionar información</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="AdminInformacion" asp-action="CalendarioImpuesto">Calendario de impuestos</a>
@@ -53,6 +53,7 @@
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

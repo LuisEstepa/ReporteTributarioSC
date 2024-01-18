@@ -26,6 +26,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\DEVLUIS\LuisEstepa\ReporteTributario\ReporteTributarioSC\ReporteTributario\ReporteTributario
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/DEVLUIS/LuisEstepa/ReporteTributario/ReporteTributarioSC/ReporteTributario/ReporteTributario/Views/AdminInformacion/AgregarNuevo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5JbmZvcm1hY2lvblxBZ3JlZ2FyTnVldm8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/DEVLUIS/LuisEstepa/ReporteTributario/ReporteTributarioSC/ReporteTributario/ReporteTributario/Views/AdminInformacion/CalendarioImpuesto.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5JbmZvcm1hY2lvblxDYWxlbmRhcmlvSW1wdWVzdG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

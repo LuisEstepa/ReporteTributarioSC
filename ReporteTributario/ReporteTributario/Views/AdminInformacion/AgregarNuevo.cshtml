@@ -1,0 +1,117 @@
+﻿@model ReporteTributario.Models.Entities.InformacionBase
+
+@{
+    ViewData["Title"] = "AgregarRegistro";
+}
+
+<h1>Agregar nuevo impuesto</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AgregarNuevo">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Impuesto" class="control-label"></label>
+                <input asp-for="Impuesto" class="form-control" required />
+                <span asp-validation-for="Impuesto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ciudad" class="control-label"></label>
+                <input asp-for="Ciudad" class="form-control" required/>
+                <span asp-validation-for="Ciudad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Departamento" class="control-label"></label>
+                <input asp-for="Departamento" class="form-control" required />
+                <span asp-validation-for="Departamento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaLimite" class="control-label"></label>
+                <input asp-for="FechaLimite" class="form-control" required />
+                <span asp-validation-for="FechaLimite" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Responsable" class="control-label"></label>
+                <input asp-for="Responsable" class="form-control" required />
+                <span asp-validation-for="Responsable" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Periodo" class="control-label"></label>
+                <input asp-for="Periodo" class="form-control" required />
+                <span asp-validation-for="Periodo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Periodicidad" class="control-label"></label>
+                <input asp-for="Periodicidad" class="form-control" required />
+                <span asp-validation-for="Periodicidad" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label" >
+                    <input class="form-check-input" asp-for="Vigente" hidden /> @Html.DisplayNameFor(model => model.Vigente)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary"/>
+                <button id="btn-confirmar" value="Create" type="submit" class="btn btn-primary" onclick="guardadoExitoso()">Enviar</button>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="MostrarInformacion">Back to List</a>
+</div>
+<script>
+    function guardadoExitoso() {
+
+        Swal.fire('Excelente', 'Registro guardado con exito.', 'success');
+    }
+         
+    function guardadoError() {
+        Swal.fire('Error', 'Ha ocurrido un error', 'error');
+    }
+
+    function enviarFormulario(e) {
+        e.preventDefault();
+
+        Swal.fire({
+            title: '¿Quieres guardar los cambios?',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Sí'
+        }).then((resultado) => {
+            if (resultado.isConfirmed) {
+                const formulario = document.getElementById('nuevo-registro');
+                formulario.submit();
+                guardadoExitoso();
+            }
+        })
+
+    }
+
+    function confirmar() {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success"
+                });
+                const formulario = document.getElementById('nuevo-registro');
+                formulario.submit();
+            }
+        });
+    }
+
+</script>
+

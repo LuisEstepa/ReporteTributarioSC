@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ReporteTributario")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e386b983c2d7138d7f437eabf407b1a38e57bd5e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c5f41fcabd087701e9f22f3cff0ec4b6050ea8a")]
 [assembly: System.Reflection.AssemblyProductAttribute("ReporteTributario")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ReporteTributario")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

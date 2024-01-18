@@ -40,6 +40,39 @@ namespace ReporteTributario.Controllers
             return View();
         }
 
+        public async Task<IActionResult> GetAll()
+        {
+            var Response = await TraerDatos();
+            
+            return Json(Response);
+        }
+
+        public async Task<List<InformacionBaseVM>> TraerDatos()
+        {
+            var _data = await _dbcontext.InformacionBase.ToListAsync();
+            List<InformacionBaseVM> datos = new();
+            if (_data != null && _data.Count > 0)
+            {
+                _data.ForEach(item =>
+                {
+                    datos.Add(new InformacionBaseVM()
+                    {
+                        IdImpuesto = item.IdImpuesto,
+                        Impuesto = item.Impuesto,
+                        Ciudad = item.Ciudad,
+                        Departamento = item.Departamento,
+                        FechaLimite = item.FechaLimite,
+                        Responsable = item.Responsable,
+                        Periodo = item.Periodo,
+                        Periodicidad = item.Periodicidad                       
+
+                    });
+                });
+            }
+            return datos;
+        }
+
+
         [HttpPost]
         public IActionResult MostrarDatos([FromForm] IFormFile ArchivoExcel)
         {
@@ -241,6 +274,10 @@ namespace ReporteTributario.Controllers
             return registro;
         }
 
+        public async Task<IActionResult> AgregarNuevo()
+        {            
+            return View();
+        }
         public async Task<bool> AgregarRegistro(InformacionBase model)
         {
             try
