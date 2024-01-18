@@ -2098,3 +2098,4 @@ C:\DEVLUIS\LuisEstepa\ReporteTributario\ReporteTributarioSC\ReporteTributario\Re
 C:\DEVLUIS\LuisEstepa\ReporteTributario\ReporteTributarioSC\ReporteTributario\ReporteTributario\obj\Debug\net8.0\ReporteTributario.pdb
 C:\DEVLUIS\LuisEstepa\ReporteTributario\ReporteTributarioSC\ReporteTributario\ReporteTributario\obj\Debug\net8.0\ReporteTributario.genruntimeconfig.cache
 C:\DEVLUIS\LuisEstepa\ReporteTributario\ReporteTributarioSC\ReporteTributario\ReporteTributario\obj\Debug\net8.0\ref\ReporteTributario.dll
+D:\EmpresaSoftware\ReportetributarioSC\ReporteTributario\ReporteTributario\bin\Debug\net8.0\libman.json

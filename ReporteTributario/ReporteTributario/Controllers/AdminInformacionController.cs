@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
+using ReporteTributario.Extensions;
 using ReporteTributario.Models;
 using ReporteTributario.Models.Entities;
 using ReporteTributario.Models.ViewModels;
@@ -11,7 +12,7 @@ using ReporteTributario.Servicios.Contrato;
 using System.Data;
 namespace ReporteTributario.Controllers
 {
-    public class AdminInformacionController : Controller
+    public class AdminInformacionController : BaseController
     {
         private readonly DbTtributarioContext _dbcontext;
         private readonly IAdminInformacionService _Service;
@@ -286,13 +287,15 @@ namespace ReporteTributario.Controllers
 
                 await _dbcontext.SaveChangesAsync();
 
+                BasicNotification("Creado", NotificationType.Success, "Correcto!");
+
                 return true;
 
             }
             catch (Exception ex)
             {
                 // Manejar la excepción, como registrar el error o informar al usuario
-                Console.WriteLine(ex.Message);
+                BasicNotification("Algo fallo!..", NotificationType.Error, ex.ToString());
                 return false;
             }
         }

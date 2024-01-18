@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.EntityFrameworkCore;
 using ReporteTributario.Models;
 using ReporteTributario.Servicios.Contrato;
@@ -13,9 +15,12 @@ builder.Services.AddDbContext<DbTtributarioContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("TributarioConnection"));
 });
+
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<IEventService, EventService>();
 builder.Services.AddScoped<IAdminInformacionService, AdminInformacionService>();
+builder.Services.AddSession();
+builder.Services.AddSingleton<ITempDataProvider, CookieTempDataProvider>();
 
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
@@ -50,6 +55,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseSession();
 
 app.UseAuthorization();
 

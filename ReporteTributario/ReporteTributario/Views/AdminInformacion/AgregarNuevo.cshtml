@@ -48,21 +48,22 @@
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label" >
-                    <input class="form-check-input" asp-for="Vigente" hidden /> @Html.DisplayNameFor(model => model.Vigente)
+                    <input class="form-check-input" asp-for="Vigente" /> @Html.DisplayNameFor(model => model.Vigente)
                 </label>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary"/>
                 <button id="btn-confirmar" value="Create" type="submit" class="btn btn-primary" onclick="guardadoExitoso()">Enviar</button>
-
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="MostrarInformacion">Back to List</a>
+    <a asp-action="MostrarInformacion">Volver a la lista</a>
 </div>
+
+<partial name="_NotificationPartial"/>
 <script>
     function guardadoExitoso() {
 
