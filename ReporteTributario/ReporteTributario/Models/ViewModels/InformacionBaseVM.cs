@@ -11,5 +11,7 @@
         public string Periodo { get; set; }
         public string Periodicidad { get; set; }
         public bool? Vigente { get; set; }
+
+        public string sortColumn { get;}
     }
 }
