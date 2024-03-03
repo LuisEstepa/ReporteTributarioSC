@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ReporteTributario.Models.Entities
@@ -6,6 +7,7 @@ namespace ReporteTributario.Models.Entities
     [Table("Informacion")]
     public class InformacionBase
     {
+        [Key]
         public int IdImpuesto { get; set; }
         public string Impuesto { get; set; }
         public string Ciudad { get; set; }
